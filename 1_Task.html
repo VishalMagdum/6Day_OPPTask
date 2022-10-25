@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // The class Movie is stated below. An instance of class Movie represents a film. This class has the following three properties:
+
+        // title, which is a String representing the title of the movie
+        // studio, which is a String representing the studio that made the movie
+        // rating, which is a String representing the rating of the movie (i.e. PG­13, R, etc)
+
+
+
+        class Movie {
+            constructor(title, studio, rating) {
+                this.title = title,
+                    this.studio = studio
+                // this.rating=rating
+                if (rating == null) {
+                    return this.rating = "PG"  // to set defualt value of rating
+                } else {
+                    return this.rating = rating  // if value of rating is given
+                }
+            }
+            getPG(array) {
+
+                var result = array.filter((element) => element.rating == "PG")
+                return result
+            }
+        }
+
+        var m1 = new Movie("iron man", "marvel");
+        var m2 = new Movie("Casino Royale", "Econ Production", "PG13")
+        var m3 = new Movie("Hulk","Marvel","pg")
+        var m4 = new Movie("she hulk","Marvel","R")
+        var m5 = new Movie("Thor","marvel","PG")
+        var m6 = new Movie("Bat Man","DC","PG13")
+        
+        var array = [m1,m2,m3,m4,m5,m6]
+
+        console.log(m1.getPG(array));
+    </script>
+</body>
+
+</html>
